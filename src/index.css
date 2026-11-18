@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --bg: #F7FAF5;
+  --surface: #FFFFFF;
+  --surface-2: #EEF5F0;
+  --ink: #1E2B25;
+  --ink-muted: #5C6F65;
+  --primary: #3FA374;
+  --primary-strong: #2A7F58;
+  --primary-100: #DDF1E6;
+  --accent: #F6B93B;
+  --accent-100: #FFF1CF;
+  --sky: #7CC6E8;
+  --sky-100: #E3F4FB;
+  --coral: #EF8A6B;
+  --coral-100: #FDE7DF;
+  --violet: #9B8AE6;
+  --violet-100: #EEEAFB;
+  --border: #E1EBE4;
+}
+
+@theme {
+  --color-bg: #F7FAF5;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EEF5F0;
+  --color-ink: #1E2B25;
+  --color-ink-muted: #5C6F65;
+  --color-primary: #3FA374;
+  --color-primary-strong: #2A7F58;
+  --color-primary-100: #DDF1E6;
+  --color-accent: #F6B93B;
+  --color-accent-100: #FFF1CF;
+  --color-sky: #7CC6E8;
+  --color-sky-100: #E3F4FB;
+  --color-coral: #EF8A6B;
+  --color-coral-100: #FDE7DF;
+  --color-violet: #9B8AE6;
+  --color-violet-100: #EEEAFB;
+  --color-border: #E1EBE4;
+
+  --font-heading: 'Plus Jakarta Sans', 'Noto Sans Kannada', 'Noto Sans Devanagari', sans-serif;
+  --font-body: 'Inter', 'Noto Sans Kannada', 'Noto Sans Devanagari', sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  button, a, input, select, textarea {
+    outline-color: var(--primary-strong);
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary-strong);
+    outline-offset: 2px;
+  }
+}
+
+.shadow-soft {
+  box-shadow: 0 8px 30px rgba(30, 43, 37, 0.06);
+}
+
+.shadow-elevated {
+  box-shadow: 0 16px 44px rgba(30, 43, 37, 0.10);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #EEF5F0 25%, #F7FAF5 50%, #EEF5F0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.85); opacity: 0.75; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+.pulse-ring {
+  transform-origin: center;
+  animation: pulseRing 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}

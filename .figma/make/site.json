@@ -1,0 +1,11 @@
+{
+  "title": "HarvestHaul — Rural Freight Pooling & Return-Leg Network",
+  "description": "A rural freight platform helping farmers, businesses, and transporters pool loads, cut costs, fill return trips, and track deliveries transparently.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
